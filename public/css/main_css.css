@@ -1,0 +1,250 @@
+/* Principal */
+body {
+	background-color: #FFF;
+	margin: 0px;
+}
+
+p {
+	margin     : 0px;
+	color      : #FFF;
+	font-family: Arial;
+	font-size  : 10px;	
+}
+
+#page {
+	width : 100%;
+	height: auto;
+	margin: 0px auto;
+}
+
+ 
+#header {
+	height: 300px;
+	width : 100%;
+}
+
+#menu_bar {
+	height: 50px;
+	width : 100%;
+	background-color: #F23;
+}
+
+#content {
+	height: auto;
+	width : 100%;
+}
+
+#content_index {
+	height    : auto;
+	min-height: 300px;
+	width     : 100%;
+	background-color: #C0C0C0;		
+	display: table;	
+	/*border-top      : solid #000000 ;
+	border-bottom   : solid #000000 ;
+	border-width    : thick;*/
+}
+
+#logo img {
+	height   : 300px;
+	width    : 50%;
+	min-width: 450px;
+	padding  : 70px 0px 50px 2%;	
+}
+
+#description_page {
+	height: 300px;
+	width : 50%;
+	float : left;
+	margin: 50px auto;
+}
+
+#ads {
+	height: 300px;
+	width : 50%;
+	float : right;
+	margin: 50px auto;
+}
+
+#footer {
+	height: 200px;
+	width : 100%;
+	background-color: #ABA7E4;		
+}
+
+#smelse{
+	height: 300px;
+	width : 100%;
+	display: table;
+}
+
+#smelse p{
+	font-family: arial;
+	font-size: 30px;
+	text-align: center;
+	color: #000;
+	display: table-cell; 
+	vertical-align: middle;
+}
+
+#footer p {
+	padding: 10px 0px 0px 0px;
+	font-family: arial;
+	text-align: center;
+	font-size: 16px;
+	color: #000;
+
+}
+
+/* Index */
+#description, #description_ads{
+	text-align: center;
+}
+
+#description p, #description_ads p {
+	font-family: arial;
+	font-size: 26px;
+}
+
+.form-group h6 {
+	color: #FF0000;
+}
+
+
+/* Panel de control */
+
+
+#center {
+	height: 250px;	
+	width: 100%;	
+	padding: 0px 5% 0px 5%;	
+	display: table-cell;
+	vertical-align:  middle;
+}
+
+#query, #moves {
+	width : 30%;
+	height: 60%;
+	max-height: 300px;
+	display: table;
+	background-color: #081081;	
+	float: left;
+	
+}
+
+#moves {
+	margin-left: 10px;
+}
+
+#query {
+	margin-left: 20%;
+	margin-right: 0px;
+}
+
+#query a:hover, #moves a:hover {
+	text-decoration: none;
+	opacity:0.4;
+	filter:alpha(opacity=40);		
+}
+
+#query a, #moves a {
+	text-align    : left;
+	display       : table-cell;
+	vertical-align: bottom;
+}
+
+#query p, #moves p {
+	font-size: 20px;
+}
+
+#sss {
+	color: #004080;
+}
+
+#navContain{
+	float  : left;
+	height : 50px;	
+	padding: 15px 15px;
+}
+
+
+/*------------------------------------------------------------*/
+/* Consultas */
+
+#table_content {
+	padding  : 1% 0px 5% 0%;
+	width    : auto;
+	min-width: 200px;
+	height   : auto;
+}
+
+#table_content #tabla {
+	border: solid #000;
+	width: 20%;
+	float: left;
+}
+
+#table_content th {
+	background-color: #FFF;
+}
+
+#table_balance {
+	width : 80%;
+	background-color: #FFF;
+	float: left;
+}
+
+#table_result{
+	width: 100%;
+}
+
+#table_result td, #table_result th{
+	text-align: center;
+}
+
+/*-----------------------------------------------*/
+/* Transactions */
+
+.c_content{
+	height: auto;
+	min-height: 100px;
+	width: 98%;
+	border: solid #000 thin;
+	margin: 10px 10px 10px 10px;
+	border-radius: 10px;
+}
+
+.c_content p {	
+	font-size: 20px;
+	color: #000;
+	margin: 10px 0px 0px 10px;
+	width: 300px;
+}
+
+.content_right {
+	padding: 30px 0px 33px 0px;
+	float: right;
+	width: 70%;
+	height: 100%;
+	border-left: solid thin #FFFFFF;	
+}
+
+.content_left {
+	height: 100%;
+	float: left;
+	width: 30%;
+}
+
+#formulario{ 
+	height: 300px;
+	width : 100%;	
+}
+
+#btn_submit {
+	margin: 10px 0px 10px 0px;
+	width: 150px;
+}
+
+#btn_return {
+	width: 150px;
+}
