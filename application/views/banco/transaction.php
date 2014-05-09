@@ -37,7 +37,7 @@
 									<a id="logout" class="navbar-brand" href="<?= site_url('/login/only_authenticaded_users/logout'); ?>">Cerrar Sesión</a>
 		                    </ul>
 		                    <div id="navContain">
-								<span id="sss"> Usted a iniciado sesión como: </span>	
+								<span id="login"> Usted a iniciado sesión como: </span>	
 								<a href="#"> 
 									<?php 
 										if($this->session->userdata('logged_in'))
@@ -105,10 +105,10 @@
 										</div>	
 									</div>
 										
-							    	<div class="col-sm-offset-9 col-sm-10">
+							    	<div id="buttons" class="col-sm-offset-9">
 							      		<button id="btn_submit" type="submit" class="btn btn-success">Aceptar</button>	      		
-							      		<a href="#">
-							      			<button id="btn_return" class="btn btn-primary">Regresar</button>
+							      		<a href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
+							      			<button type="button" id="btn_return" class="btn btn-primary">Regresar</button>
 							      		</a>
 							    	</div>
 							

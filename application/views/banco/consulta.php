@@ -29,7 +29,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" id="home" href="<?= site_url('admin/home'); ?>">
+							<a class="navbar-brand" id="home" href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
 								MBank
 						    </a>
 						</div>
@@ -38,7 +38,7 @@
 									<a id="logout" class="navbar-brand" href="<?= site_url('/login/only_authenticaded_users/logout'); ?>">Cerrar Sesión</a>
 		                    </ul>
 		                    <div id="navContain">
-								<span id="sss"> Usted a iniciado sesión como: </span>	
+								<span id="login"> Usted a iniciado sesión como: </span>	
 								<a href="#"> 
 									<?php 
 										if($this->session->userdata('logged_in'))

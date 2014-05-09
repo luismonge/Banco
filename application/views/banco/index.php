@@ -31,8 +31,9 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand pull-left" id="home" href="<?= site_url('admin/home'); ?>">
-								<img src="<?php echo base_url('/public/images/MBankIcon.ico')?>"
+							<a class="navbar-brand pull-left" id="home" href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
+								MBank
+								<img src="<?php echo base_url('/public/images/MBankIcon.ico')?>" />
 						    </a>
 						</div>
 						<div class="navbar-collapse collapse " style="height: 1px;">													
@@ -62,8 +63,8 @@
 					</div>
 				</div>
 				<div id="logo">		
-					<a href="<?= site_url('Banco/banco_controller'); ?>">
-						<img src="<?= base_url('/public/images/MbankLogo2.png') ?>">
+					<a href="<?= site_url('Banco/banco_controller'); ?>">						
+						<img src="<?= base_url('/public/images/MbankLogo.png') ?>">
 					</a>
 				</div>
 		</div>		
