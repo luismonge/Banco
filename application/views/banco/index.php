@@ -10,9 +10,10 @@
 	<!-- bootstrap -->
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.min.css') ?> " rel="stylesheet" type="text/css" />	
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.css') ?> " rel="stylesheet" type="text/css" />
-		
-
-	<script type="text/javascript" src="<?php echo base_url('/public/js/jquery.min.js') ?>"> </script>
+	<link rel="shortcut icon" href="<?php echo base_url('/public/images/MBankIcon.ico')?>">
+	
+	<script type="text/javascript" src="<?php echo base_url('/public/js/jquery.min.js'); ?>"> </script>
+	<script type="text/javascript" src="<?php echo base_url('/public/js/bootstrap/bootstrap.min.js');?>"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('/public/css/main_css.css'); ?>">
 
 </head>
@@ -30,8 +31,8 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" id="home" href="<?= site_url('admin/home'); ?>">
-								MBank
+							<a class="navbar-brand pull-left" id="home" href="<?= site_url('admin/home'); ?>">
+								<img src="<?php echo base_url('/public/images/MBankIcon.ico')?>"
 						    </a>
 						</div>
 						<div class="navbar-collapse collapse " style="height: 1px;">													
@@ -70,9 +71,31 @@
 			<div id="content_index">	
 				<div id="description_page">
 					<div id="description">
-						<p>
-							MBank es una empresa mexicana donde nuestros clientes podrán sentirse seguros de su dinero, ya que contamos con 
-						</p>
+						<div id="metro-board">
+							<div id="saving" class="metro">
+		    					<a href="#" data-toggle="popover" title="El banco más seguro" data-content="Te damos un servicio de calidad que proteja tu dinero y a los tuyos." data-placement="top" role="button">Cuidamos tu dinero</a>
+		  					</div>
+		  					
+		  					<div id="protect" class="metro">
+		    					<a href="#" data-toggle="popover" title="Sin cargos adicionales" data-content="MBank te ofrece un servicio libre de tarifas extras ni cargos adicionales." data-placement="top" role="button">Protegemos tus intereses</a>
+		  					</div>
+		  					
+		  					<div id="worldwide" class="metro">
+		    					<a href="#" data-toggle="popover" title="Cobertura internacional" data-content="¿Viajas fuera de la ciudad? ¿Compras en linea? Con el servicio internacional MBank puedes pagar con tu cuenta donde sea, cuando sea." data-placement="top" role="button">Cobertura internacional</a>
+		  					</div>
+		  					
+		  					<div id="business" class="metro">
+		    					<a href="#" data-toggle="popover" title="Asegura tu negocio" data-content="MBank Business te ofrece beneficios empresariales con los cuales puedes asegurarte de que tu negocio estará seguro." data-placement="bottom" role="button">Beneficio a tu negocio</a>
+		  					</div>
+		  					
+		  					<div id="promo" class="metro">
+		    					<a href="#" data-toggle="popover" title="Grandes promociones" data-content="Al ser cliente MBank tienes la oportunidad de entrar a promociones como las vajillas del Bancomer." data-placement="bottom" role="button">Promociones</a>
+		  					</div>
+		  					
+		  					<div id="contact" class="metro">
+		    					<a href="#" data-toggle="popover" title="Nos preocupamos por ti" data-content="¿Tienes dudas? Comunícate con nosotros en nuestra linea telefónica o correo electrónico las 24 horas los 7 días de la semana." data-placement="bottom" role="button">Siempre en contacto</a>
+		  					</div>
+  						</div>
 					</div>
 				</div>
 				<div id="ads">
