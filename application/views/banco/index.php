@@ -31,8 +31,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand pull-left" id="home" href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
-								MBank
+							<a class="navbar-brand" id="home" href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
 								<img src="<?php echo base_url('/public/images/MBankIcon.ico')?>" />
 						    </a>
 						</div>
@@ -63,8 +62,8 @@
 					</div>
 				</div>
 				<div id="logo">		
-					<a href="<?= site_url('Banco/banco_controller'); ?>">						
-						<img src="<?= base_url('/public/images/MbankLogo.png') ?>">
+					<a href="<?= site_url('Banco/banco_controller'); ?>">
+						<img src="<?= base_url('/public/images/MbankLogo2.png') ?>">
 					</a>
 				</div>
 		</div>		
@@ -74,27 +73,27 @@
 					<div id="description">
 						<div id="metro-board">
 							<div id="saving" class="metro">
-		    					<a href="#" data-toggle="popover" title="El banco más seguro" data-content="Te damos un servicio de calidad que proteja tu dinero y a los tuyos." data-placement="top" role="button">Cuidamos tu dinero</a>
+		    					<a href="#" data-toggle="popover" data-trigger="hover" title="El banco más seguro" data-content="Te damos un servicio de calidad que proteja tu dinero y a los tuyos." data-placement="top" role="button">Cuidamos tu dinero</a>
 		  					</div>
 		  					
 		  					<div id="protect" class="metro">
-		    					<a href="#" data-toggle="popover" title="Sin cargos adicionales" data-content="MBank te ofrece un servicio libre de tarifas extras ni cargos adicionales." data-placement="top" role="button">Protegemos tus intereses</a>
+		    					<a href="#" data-toggle="popover" data-trigger="hover" title="Sin cargos adicionales" data-content="MBank te ofrece un servicio libre de tarifas extras ni cargos adicionales." data-placement="top" role="button">Protegemos tus intereses</a>
 		  					</div>
 		  					
 		  					<div id="worldwide" class="metro">
-		    					<a href="#" data-toggle="popover" title="Cobertura internacional" data-content="¿Viajas fuera de la ciudad? ¿Compras en linea? Con el servicio internacional MBank puedes pagar con tu cuenta donde sea, cuando sea." data-placement="top" role="button">Cobertura internacional</a>
+		    					<a href="#" data-toggle="popover" data-trigger="hover" title="Cobertura internacional" data-content="¿Viajas fuera de la ciudad? ¿Compras en linea? Con el servicio internacional MBank puedes pagar con tu cuenta donde sea, cuando sea." data-placement="top" role="button">Cobertura internacional</a>
 		  					</div>
 		  					
 		  					<div id="business" class="metro">
-		    					<a href="#" data-toggle="popover" title="Asegura tu negocio" data-content="MBank Business te ofrece beneficios empresariales con los cuales puedes asegurarte de que tu negocio estará seguro." data-placement="bottom" role="button">Beneficio a tu negocio</a>
+		    					<a href="#" data-toggle="popover" data-trigger="hover" title="Asegura tu negocio" data-content="MBank Business te ofrece beneficios empresariales con los cuales puedes asegurarte de que tu negocio estará seguro." data-placement="bottom" role="button">Beneficio a tu negocio</a>
 		  					</div>
 		  					
 		  					<div id="promo" class="metro">
-		    					<a href="#" data-toggle="popover" title="Grandes promociones" data-content="Al ser cliente MBank tienes la oportunidad de entrar a promociones como las vajillas del Bancomer." data-placement="bottom" role="button">Promociones</a>
+		    					<a href="#" data-toggle="popover" data-trigger="hover" title="Grandes promociones" data-content="Al ser cliente MBank tienes la oportunidad de entrar a promociones como las vajillas del Bancomer." data-placement="bottom" role="button">Promociones</a>
 		  					</div>
 		  					
 		  					<div id="contact" class="metro">
-		    					<a href="#" data-toggle="popover" title="Nos preocupamos por ti" data-content="¿Tienes dudas? Comunícate con nosotros en nuestra linea telefónica o correo electrónico las 24 horas los 7 días de la semana." data-placement="bottom" role="button">Siempre en contacto</a>
+		    					<a href="#" data-toggle="popover" data-trigger="hover" title="Nos preocupamos por ti" data-content="¿Tienes dudas? Comunícate con nosotros en nuestra linea telefónica o correo electrónico las 24 horas los 7 días de la semana." data-placement="bottom" role="button">Siempre en contacto</a>
 		  					</div>
   						</div>
 					</div>

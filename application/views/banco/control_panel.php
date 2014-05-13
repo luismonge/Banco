@@ -8,7 +8,8 @@
 	<!-- bootstrap -->
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.min.css') ?> " rel="stylesheet" type="text/css" />	
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.css') ?> " rel="stylesheet" type="text/css" />
-		
+	<link rel="shortcut icon" href="<?php echo base_url('/public/images/MBankIcon.ico')?>">
+	
 
 	<script type="text/javascript" src="<?php echo base_url('/public/js/jquery.min.js') ?>"> </script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('/public/css/main_css.css'); ?>">
@@ -28,17 +29,17 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" id="home" href="<?= site_url('banco/banco_controller/controlPanell'); ?>">
-								MBank
+							<a class="navbar-brand" id="home" href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
+								<img src="<?php echo base_url('/public/images/MBankIcon.ico')?>" />
 						    </a>
 						</div>
 						<div class="navbar-collapse collapse" style="height: 1px;">														
-							<ul class="nav pull-right">
-									<a id="logout" class="navbar-brand" href="<?= site_url('/login/only_authenticaded_users/logout'); ?>">Cerrar Sesión</a>
+							<ul class="nav pull-right logout">
+									<a id="sss" class="navbar-brand" href="<?= site_url('/login/only_authenticaded_users/logout'); ?>">Cerrar Sesión</a>
 		                    </ul>
 		                    <div id="navContain">
-								<span id="login"> Usted a iniciado sesión como: </span>	
-								<a href="#"> 
+								<span id="sss"> Bienvenido, </span>	
+								<a href="<?= site_url('Banco/banco_controller/controlPanel'); ?>" id="sss"> 
 									<?php 
 										if($this->session->userdata('logged_in'))
 										{
@@ -59,22 +60,36 @@
 		</div>
 
 		<div id="content">
-			<div id="content_index">
-				<div id="center">						
-						<div id="query">	
-								<a href="<?= site_url('/banco/banco_controller/money'); ?>">					
-									<p>
-										Consulta tu saldo
-									</p>					
-								</a>
-						</div>					
-						<div id="moves">	
-							<a href="<?= site_url('/banco/banco_controller/goTransaction'); ?>">
-								<p>
-									Realizar una transaccion				
-								</p>							
-							</a>
-						</div>					
+			<div id="content_index control-panel">
+				<div id="cp-options">
+					<fieldset>
+						<legend>Opciones</legend>	
+						<div class="metro" id="balance">
+							<a href="<?= site_url('/banco/banco_controller/money'); ?>">Consulta tu saldo</a>
+						</div>
+						<div class="metro" id="transfer">
+							<a href="<?= site_url('/banco/banco_controller/goTransaction'); ?>">Realiza una transacción</a>
+						</div>
+					</fieldset>	
+				</div>
+				<div id="center">
+					<div class="metro" id="pw-balance">
+						<a href="#">Balance</a>
+					</div>					
+					<!--<div id="query">	
+						<a href="<?= site_url('/banco/banco_controller/money'); ?>">					
+							<p>
+								Consulta tu saldo
+							</p>					
+						</a>
+					</div>					
+					<div id="moves">	
+						<a href="<?= site_url('/banco/banco_controller/goTransaction'); ?>">
+							<p>
+								Realizar una transaccion				
+							</p>							
+						</a>
+					</div>-->					
 				</div>
 			</div>	
 			<div id="smelse">

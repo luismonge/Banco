@@ -8,7 +8,7 @@
 	<!-- bootstrap -->
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.min.css') ?> " rel="stylesheet" type="text/css" />	
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.css') ?> " rel="stylesheet" type="text/css" />
-		
+	<link rel="shortcut icon" href="<?php echo base_url('/public/images/MBankIcon.ico')?>">
 	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('/public/css/main_css.css'); ?>">
 	<script type="text/javascript" src="<?php echo base_url('/public/js/jquery.min.js') ?>"> </script>
@@ -30,7 +30,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<a class="navbar-brand" id="home" href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
-								MBank
+								<img src="<?php echo base_url('/public/images/MBankIcon.ico')?>" />
 						    </a>
 						</div>
 						<div class="navbar-collapse collapse" style="height: 1px;">														
@@ -38,8 +38,8 @@
 									<a id="logout" class="navbar-brand" href="<?= site_url('/login/only_authenticaded_users/logout'); ?>">Cerrar Sesión</a>
 		                    </ul>
 		                    <div id="navContain">
-								<span id="login"> Usted a iniciado sesión como: </span>	
-								<a href="#"> 
+								<span id="sss"> Bienvenido, </span>	
+								<a href="<?= site_url('Banco/banco_controller/controlPanel'); ?>" id="sss"> 
 									<?php 
 										if($this->session->userdata('logged_in'))
 										{
