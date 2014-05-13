@@ -29,11 +29,11 @@ class Banco_controller extends CI_Controller {
 	public function money()
 	{
 		if($this->session->userdata('logged_in'))
-		{
-			$session_data = $this->session->userdata('logged_in');
-			$data         = $session_data['id'];
-
+		{			
 			$this->load->model('banco/banco_model', 'b_model');
+
+			$session_data      = $this->session->userdata('logged_in');
+			$data              = $session_data['id'];
 			$result['cuentas'] = $this->b_model->account($data);
 
 			$this->load->view('banco/consulta', $result);
@@ -52,9 +52,18 @@ class Banco_controller extends CI_Controller {
 			$no_cuenta = $this->input->get('id',TRUE);			
 
 			$this->load->model('banco/banco_model', 'b_model');
-			$balance['bal'] = $this->b_model->getMoves($no_cuenta);
+			$balance    = $this->b_model->getMoves($no_cuenta);
+			$saldoTotal = $this->b_model->getBalance($no_cuenta);
 			
-			$this->load->view('Banco/resultado', $balance);
+			foreach ($saldoTotal as $val) 
+			{
+				$arr = array(
+					'bal' => $balance,
+					'saldo' => $saldoTotal
+				);
+			}
+
+			$this->load->view('Banco/resultado', $arr);
 		}
 		else
 		{

@@ -35,9 +35,9 @@
 							</a>
 						</div>
 						<div class="navbar-collapse collapse" style="height: 1px;">														
-							<ul class="nav pull-right">
-									<a id="logout" class="navbar-brand" href="<?= site_url('/login/only_authenticaded_users/logout'); ?>">Cerrar Sesión</a>
-		                    </ul>
+							<div class="nav pull-right logout">
+									<a id="sss" class="navbar-brand" href="<?= site_url('/login/only_authenticaded_users/logout'); ?>">Cerrar Sesión</a>
+		                    </div>
 		                    <div id="navContain">
 								<span id="sss"> Bienvenido, </span>	
 								<a href="<?= site_url('Banco/banco_controller/controlPanel'); ?>" id="sss"> 

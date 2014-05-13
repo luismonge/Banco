@@ -32,6 +32,7 @@ class Banco_model extends CI_Model{
 		$this->db->select('no_cuenta');
 		$this->db->from('Cuenta');
 		$this->db->where('cve_usuario', $id_usuario);
+		$this->db->order_by('no_cuenta', 'asc');
 		$query = $this->db->get();
 
 		return $query->result();

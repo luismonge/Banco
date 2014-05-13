@@ -1,6 +1,6 @@
 /* Principal */
 body {
-	background-color: #FFF;
+	background-color: #EFEAE3;
 	margin: 0px;
 }
 
@@ -35,7 +35,7 @@ p {
 
  
 #header {
-	height: 300px;
+	height: auto;
 	width : 100%;
 }
 
@@ -54,7 +54,7 @@ p {
 	height    : auto;
 	min-height: 300px;
 	width     : 100%;
-	background-color: #0C4C8D;		
+	
 	display: table;	
 	/*border-top      : solid #000000 ;
 	border-bottom   : solid #000000 ;
@@ -64,7 +64,10 @@ p {
 #logo {
 	height: 350px;
 	background-image: url('../images/money.png');
+	background-size: 25%;
+	margin-right: 100px;
 	background-position: right;
+	background-repeat: no-repeat;
 }
 
 #logo img {
@@ -91,7 +94,7 @@ p {
 #footer {
 	height: 200px;
 	width : 100%;
-	background-color: #ABA7E4;		
+	
 }
 
 #smelse{
@@ -250,7 +253,7 @@ p {
 }
 
 #sss {
-	color: #FFFFFF;
+	color: #000;
 }
 
 
@@ -303,6 +306,15 @@ p {
 	width: auto;
 }
 
+#saldo_total h1{
+	text-align: left;
+}
+
+#saldo_t {
+	font-size: 30px;
+	color: #32B320;
+	text-decoration: underline;
+}
 
 /*-----------------------------------------------*/
 /* Transactions */
@@ -351,18 +363,14 @@ p {
 	width: 150px;
 }
 
-.navbar-default {
-	background-color: #0E3266;
-	border-color: #0E3266;
-}
 
 .navbar-brand {
 	padding: 3px 15px;
 }
 
-.logout
+.logout a
 {
-	margin-bottom: 0px;
+	padding-top: 15px;
 }
 
 #home img
