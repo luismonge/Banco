@@ -27,7 +27,7 @@ class Banco_model extends CI_Model{
 		
 	}
 
-	function balance($id_usuario)
+	function account($id_usuario)
 	{
 		$this->db->select('no_cuenta');
 		$this->db->from('Cuenta');
@@ -37,7 +37,7 @@ class Banco_model extends CI_Model{
 		return $query->result();
 	}
 
-	function getBalance($no_cuenta) {
+	function getMoves($no_cuenta) {
 		$this->db->select('*');
 		$this->db->from('Transaccion');
 		$this->db->where('cuenta', $no_cuenta);
@@ -46,5 +46,55 @@ class Banco_model extends CI_Model{
 		return $query->result();
 	}
 
+	public function getBalance($no_cuenta)
+	{
+		$this->db->select('saldo');
+		$this->db->from('Cuenta');
+		$this->db->where('no_cuenta', $no_cuenta);
+		$query = $this->db->get();
+
+		if ($query->num_rows() == 1)
+		{
+			return $query->result();
+		}
+		else {
+			return false;
+		}
+	}
+
+	function getMaxID()
+	{
+		$this->db->select_max('id_transaccion');
+		$query = $this->db->get('Transaccion');
+		return $query->result();
+	}
+
+	function doTransaction($deposit, $out)
+	{
+		$this->deposit($deposit);
+		$this->out($out);
+	}
+
+	function deposit($deposit)
+	{
+		$this->db->insert('Transaccion', $deposit);
+	}
+
+	function out($out)
+	{
+		$this->db->insert('Transaccion', $out);
+	}
+
+	function cash_discount($array, $cuenta)
+	{
+		$this->db->where('no_cuenta', $cuenta);
+		$this->db->update('Cuenta', $array);
+	}
+
+	function cash_insert($array, $cuenta)
+	{
+		$this->db->where('no_cuenta', $cuenta);
+		$this->db->update('Cuenta', $array);
+	}
 }
 ?>

@@ -8,8 +8,10 @@
 	<!-- bootstrap -->
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.min.css') ?> " rel="stylesheet" type="text/css" />	
 	<link href="<?php echo base_url('/public/css/bootstrap/bootstrap.css') ?> " rel="stylesheet" type="text/css" />
+		
 	<link rel="shortcut icon" href="<?php echo base_url('/public/images/MBankIcon.ico')?>">
-	
+
+
 	<script type="text/javascript" src="<?php echo base_url('/public/js/jquery.min.js') ?>"> </script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('/public/css/main_css.css'); ?>">
 
@@ -30,7 +32,7 @@
 							</button>
 							<a class="navbar-brand" id="home" href="<?= site_url('banco/banco_controller/controlPanel'); ?>">
 								<img src="<?php echo base_url('/public/images/MBankIcon.ico')?>" />
-						    </a>
+							</a>
 						</div>
 						<div class="navbar-collapse collapse" style="height: 1px;">														
 							<ul class="nav pull-right">
@@ -61,7 +63,7 @@
 		<div id="content">
 			<div id="content_index">
 
-				<form id="form_add" method="get" class="form" role="form" action=<?php echo site_url('banco/banco_controller/doTransaction'); ?>>
+				<form id="form_add" method="post" class="form" role="form" action=<?php echo site_url('banco/banco_controller/doTransaction'); ?>>
 					<div id="form_content">		
 						<div class="form-group">
 							<div id="formulario">								
@@ -72,7 +74,15 @@
 										<div class="content_right">											
 											<label for="cuenta_origen" class="col-sm-offset-0 col-sm-3 control-label">Elige tu cuenta</label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control" id="cuenta_origen" name="cuenta_origen" >
+												<select class="form-control" name="cuenta_origen">
+												  <?php
+												  	foreach ($cuentas as $row) {							
+														echo "<option>";
+														echo $row->no_cuenta;							
+														echo "</option>";		
+													}
+												  ?>
+												</select>
 											</div>
 										</div>										
 									</div>
