@@ -60,7 +60,7 @@
 		</div>
 
 		<div id="content">
-			<div id="content_index control-panel">
+			<div id="content_index">
 				<div id="cp-options">
 					<fieldset>
 						<legend>Opciones</legend>	
@@ -72,32 +72,82 @@
 						</div>
 					</fieldset>	
 				</div>
-				<div id="center">
-					<div class="metro" id="pw-balance">
-						<a href="#">Balance</a>
+				<div id="center">									
+					<div class="pw-balance carousel slide" id="myCarousel">
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="carousel-caption">
+									<h3>
+										Cuenta
+									</h3>
+									<h2>
+										<?php											
+											echo $cuenta;											
+										?>
+									</h2>
+									<h3>
+										<?php
+											echo "Saldo Total: ";
+											foreach ($saldo as $val) {
+												echo $val->saldo;
+											}
+											
+										?>
+									</h3>
+								</div>
+							</div>
+							<div class="item" id="someMov">
+								<div class="carousel-caption">
+									<h3 id="uMov">
+										Ultimos movimientos
+									</h3>
+									<h2 id="noCuenta">
+										<?php											
+											echo $cuenta;											
+										?>
+									</h2>									
+										<table>			
+											<th>Cuenta</th>								
+											<th>Cantidad</th>								
+											<th>Tipo</th>								
+											<th>Fecha</th>								
+										<?php											
+											foreach ($movimientos as $val) {
+												$tipo = $val->tipo_mov;
+												echo "<tr>";
+												echo "<td>".$val->cuenta."</td>";
+												echo "<td>".$val->cantidad."</td>";
+
+												if ($tipo == '1')
+												{
+													echo "<td>Desposito</td>";
+												}
+												if ($tipo == '2') 
+												{																							
+													echo "<td>Retiro</td>";
+												}
+
+												echo "<td>".$val->fecha."</td>";
+												echo "</tr>";
+											}
+											
+										?>
+										</table>
+									
+								</div>
+							</div>
+						</div>
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 					</div>					
-					<!--<div id="query">	
-						<a href="<?= site_url('/banco/banco_controller/money'); ?>">					
-							<p>
-								Consulta tu saldo
-							</p>					
-						</a>
-					</div>					
-					<div id="moves">	
-						<a href="<?= site_url('/banco/banco_controller/goTransaction'); ?>">
-							<p>
-								Realizar una transaccion				
-							</p>							
-						</a>
-					</div>-->					
 				</div>
 			</div>	
 			<div id="smelse">
 				<p>
 					Esta empresa no se hace responsable por casos como: <br />
-					robo total de dinero <br /> 
-					clonacion de tarjetas <br />
-					compras fantasma, etc.
+					Robo total de dinero <br /> 
+					Clonacion de tarjetas <br />
+					Compras fantasma, etc.
 				</p>
 			</div>			
 		</div>
@@ -113,4 +163,14 @@
 	</div>
 </body>
 <script src="<?php echo base_url('/public/js/bootstrap/bootstrap.min.js') ?>"></script>
+
+<script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+</script>
+
 </html>

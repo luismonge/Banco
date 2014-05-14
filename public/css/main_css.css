@@ -11,6 +11,7 @@ fieldset
 	border-width: thin;
 	padding: 0px;
 	margin-left: 5px;
+	min-width: 250px;
 }
 
 legend
@@ -50,12 +51,25 @@ p {
 	width : 100%;
 }
 
+#contentM_index {
+	height    : auto;
+	min-height: 300px;
+	width     : 100%;	
+}
+
 #content_index {
 	height    : auto;
 	min-height: 300px;
 	width     : 100%;
+	margin-left: 20%;
+}
+
+#content_index_2 {
+	height    : auto;
+	min-height: 300px;
+	width     : 100%;
+
 	
-	display: table;	
 	/*border-top      : solid #000000 ;
 	border-bottom   : solid #000000 ;
 	border-width    : thick;*/
@@ -68,6 +82,8 @@ p {
 	margin-right: 100px;
 	background-position: right;
 	background-repeat: no-repeat;
+	opacity:0.4;
+	filter:alpha(opacity=40);
 }
 
 #logo img {
@@ -75,13 +91,14 @@ p {
 	width    : 50%;
 	min-width: 450px;
 	padding  : 70px 0px 50px 2%;	
+	opacity:1.0;
+	filter:alpha(opacity=100);
 }
 
 #description_page {
 	height: auto;
 	width : 60%;
-	float : left;
-	margin: 50px auto;
+	margin: 0px auto;
 }
 
 #ads {
@@ -100,7 +117,8 @@ p {
 #smelse{
 	height: 300px;
 	width : 100%;
-	display: table;
+	padding: 80px 0px 80px 0px;
+	position: inherit;
 }
 
 #smelse p{
@@ -108,8 +126,6 @@ p {
 	font-size: 30px;
 	text-align: center;
 	color: #000;
-	display: table-cell; 
-	vertical-align: middle;
 }
 
 #footer p {
@@ -253,7 +269,7 @@ p {
 }
 
 #sss {
-	color: #000;
+	color: #FFF;
 }
 
 
@@ -274,7 +290,7 @@ p {
 #table_content {
 	padding  : 1% 0px 5% 0%;
 	width    : auto;
-	min-width: 200px;
+	
 	height   : auto;
 }
 
@@ -289,6 +305,7 @@ p {
 }
 
 #table_balance {
+	height: auto;
 	width : 80%;
 	background-color: #FFF;
 	float: left;
@@ -395,4 +412,61 @@ p {
 {
 	width: 400px;
 	height: 300px;
+}
+
+#username, #password {
+	border-radius: 0px;
+}
+
+#btn_iniciarSesion {
+	border-radius: 0px;
+}
+
+.navbar-default{
+	background-color: #333;
+}
+
+/*Este era id y ahora es clase*/
+.pw-balance
+{
+	width: 400px;
+	height: 400px;
+	margin-top: 10px;
+}
+
+/*De aquí*/
+.carousel, .carousel-inner, .carousel-inner .item 
+{
+  	height: 100%;
+}
+
+.item:nth-child(1) {
+  background: #010169;
+}
+
+.item:nth-child(2) {
+  background: #010169;
+}
+
+.item:nth-child(3) {
+  background: orange;
+}
+
+/*a aquí*/
+#center table td, h2#noCuenta, h2#uMov {
+	font-family: arial;
+	font-size: 10px;
+}
+
+#center table th{
+	font-family: arial;
+	font-size: 12px;
+}
+#center table th, #center table td {
+	text-align: center;
+	margin-right: 5px;
+}
+
+.error {
+	color: #FF0000;
 }

@@ -18,7 +18,29 @@ class Banco_controller extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in'))
 		{
-			$this->load->view('banco/control_panel');											
+			$this->load->model('banco/banco_model', 'b_model');
+			$session_data = $this->session->userdata('logged_in');
+			$data         = $session_data['id'];
+			$result       = $this->b_model->one_account($data);
+			
+			foreach ($result as $val) 
+			{
+				$no_cuenta = $val->no_cuenta;
+			}
+
+			$saldoTotal  = $this->b_model->getBalance($no_cuenta);
+			$movimientos = $this->b_model->getSomeMoves($no_cuenta);
+
+			foreach ($saldoTotal as $val) 
+			{
+				$arr = array(	
+					'cuenta'      => $no_cuenta,
+					'saldo'       => $saldoTotal,
+					'movimientos' => $movimientos
+				);
+			}
+
+			$this->load->view('banco/control_panel', $arr);											
 		}
 		else 
 		{
@@ -98,73 +120,97 @@ class Banco_controller extends CI_Controller {
 			$this->load->model('banco/banco_model', 'b_model');
 
 			$corigen    = $this->input->post('cuenta_origen');			
-			$cdestino   = $this->input->post('cuenta_destino');
-			$cantidad   = $this->input->post('cantidad');
-			$sucursal   = 999;
-			$referencia = rand(1000, 9999);
-			$fecha      = date('Y-m-d H:i:s');
-			$saldoTotal = $this->b_model->getBalance($corigen); //Objeto que obtiene el saldo total de la cuenta
-			$saldoTotal2 = $this->b_model->getBalance($cdestino);
+			$cdestino   = $this->input->post('cuenta_destino');	
 
-			foreach ($saldoTotal as $val) 
+			if ( ($this->b_model->account_exits($cdestino) ) == false)
 			{
-				$saldoTotal = $val ->saldo;
+				$session_data = $this->session->userdata('logged_in');
+				$data         = $session_data['id'];
+				$accounts = $this->b_model->account($data);
+
+				$arr = array(
+					'cuentas' => $accounts,
+					'error' => "No existe la cuenta"
+				);
+
+				$this->load->view('Banco/transaction', $arr);
 			}
-
-			foreach ($saldoTotal2 as $val) 
+			else 
 			{
-				$saldoTotal2 = $val ->saldo;
-			}
+				$cantidad   = $this->input->post('cantidad');
+				$sucursal   = 999;
+				$referencia = rand(1000, 9999);
+				$fecha      = date('Y-m-d H:i:s');
+				$saldoTotal = $this->b_model->getBalance($corigen); //Objeto que obtiene el saldo total de la cuenta
+				$saldoTotal2 = $this->b_model->getBalance($cdestino);
 
-			if ($saldoTotal > $cantidad) 
-			{
-				$id_transaccion = $this->b_model->getMaxID();
-				foreach ($id_transaccion as $val) 
+				foreach ($saldoTotal as $val) 
 				{
-					$id_transaccion = ($val ->id_transaccion) + 1;
+					$saldoTotal = $val ->saldo;
 				}
 
-				$deposit = array(
-					'id_transaccion' => $id_transaccion,
-					'cuenta'         => $cdestino,
-					'cantidad'		 => $cantidad,
-					'referencia'     =>	$referencia,
-					'sucursal'       => $sucursal,
-					'tipo_mov'       => '1',
-					'fecha'          => $fecha,
-					'tarjeta'		 => '-1'
-				);
+				foreach ($saldoTotal2 as $val) 
+				{
+					$saldoTotal2 = $val ->saldo;
+				}
 
-				$out = array(
-					'id_transaccion' => $id_transaccion,
-					'cuenta'         => $corigen,
-					'cantidad'		 => $cantidad,
-					'referencia'     =>	$referencia,
-					'sucursal'       => $sucursal,
-					'tipo_mov'       => '2',
-					'fecha'          => $fecha,
-					'tarjeta'		 => '-1'
-				);
+				if ($saldoTotal > $cantidad) 
+				{
+					$id_transaccion = $this->b_model->getMaxID();
+					foreach ($id_transaccion as $val) 
+					{
+						$id_transaccion = ($val ->id_transaccion) + 1;
+					}
 
-				$cash_insert = array(
-					'saldo' => $saldoTotal2 + $cantidad
-				);
+					$deposit = array(
+						'id_transaccion' => $id_transaccion,
+						'cuenta'         => $cdestino,
+						'cantidad'		 => $cantidad,
+						'referencia'     =>	$referencia,
+						'sucursal'       => $sucursal,
+						'tipo_mov'       => '1',
+						'fecha'          => $fecha,
+						'tarjeta'		 => '-1'
+					);
 
-				$cash_discount =  array(
-					'saldo' => $saldoTotal - $cantidad
-				);
+					$out = array(
+						'id_transaccion' => $id_transaccion,
+						'cuenta'         => $corigen,
+						'cantidad'		 => $cantidad,
+						'referencia'     =>	$referencia,
+						'sucursal'       => $sucursal,
+						'tipo_mov'       => '2',
+						'fecha'          => $fecha,
+						'tarjeta'		 => '-1'
+					);
 
-				$this->b_model->doTransaction($deposit, $out);	
-				$this->b_model->cash_discount($cash_discount, $corigen);
-				$this->b_model->cash_insert($cash_insert, $cdestino);			
+					$cash_insert = array(
+						'saldo' => $saldoTotal2 + $cantidad
+					);
+
+					$cash_discount =  array(
+						'saldo' => $saldoTotal - $cantidad
+					);
+
+					$this->b_model->doTransaction($deposit, $out);	
+					$this->b_model->cash_discount($cash_discount, $corigen);
+					$this->b_model->cash_insert($cash_insert, $cdestino);
+					redirect('banco/banco_controller/controlPanel', 'refresh');
+				}
+				else
+				{
+					$session_data = $this->session->userdata('logged_in');
+					$data         = $session_data['id'];
+					$accounts = $this->b_model->account($data);
+
+					$arr = array(
+						'cuentas' => $accounts,
+						'error2' => "No cuenta con el suficiente efectivo para realizar la transacción"
+					);
+
+					$this->load->view('Banco/transaction', $arr);
+				}
 			}
-			else
-			{
-				$error = "No cuenta con el suficiente efectivo para realizar la transacción";
-				return $error;
-			}
-
-			
 
 		}
 		else

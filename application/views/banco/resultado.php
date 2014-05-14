@@ -1,4 +1,4 @@
-<table class="table table-hover" id="table_result">
+<table class="table table-hover " id="table_result">
 		<th> ID_Transaccion </th>
 		<th> Cuenta </th>
 		<th> Cantidad </th>
@@ -26,6 +26,7 @@
 			echo "<td>".$row->tipo_mov."</td>";
 			echo "<td>".$row->fecha."</td>";
 			echo "<td>".$row->tarjeta."</td>";
+			echo "</tr>";
 		}
 		
 	 ?>

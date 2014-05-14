@@ -38,11 +38,46 @@ class Banco_model extends CI_Model{
 		return $query->result();
 	}
 
+	function one_account($id_usuario)
+	{
+		$this->db->select('no_cuenta');		
+		$this->db->where('cve_usuario', $id_usuario);
+		$this->db->order_by('no_cuenta', 'asc');
+		$query = $this->db->get('Cuenta',1);
+
+		return $query->result();
+	}
+
+	function account_exits($cdestino)
+	{		
+		$this->db->where('no_cuenta', $cdestino);		
+		$query = $this->db->get('Cuenta',1);
+		
+		if ($query->num_rows() == 1)
+		{
+			return $query->result();
+		}
+		else {
+			return false;
+		}
+	}
+
 	function getMoves($no_cuenta) {
 		$this->db->select('*');
 		$this->db->from('Transaccion');
 		$this->db->where('cuenta', $no_cuenta);
+		$this->db->order_by("id_transaccion", "asc");
 		$query = $this->db->get();
+
+		return $query->result();
+	}
+
+	function getSomeMoves($no_cuenta) {
+		$this->db->select('id_transaccion, cuenta, cantidad, tipo_mov, fecha');		
+		$this->db->where('cuenta', $no_cuenta);
+		$this->db->order_by("id_transaccion", "desc");
+        $this->db->limit(3);
+		$query = $this->db->get('Transaccion');
 
 		return $query->result();
 	}

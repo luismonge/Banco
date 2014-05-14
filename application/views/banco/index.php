@@ -55,7 +55,7 @@
 							    	<label class="sr-only" for="password">Contraseña</label>	
 							    	<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
 							  	</div>					
-							  	<button type="submit" class="btn btn-default">Iniciar Sesión</button>
+							  	<button type="submit" id="btn_iniciarSesion" class="btn btn-default">Iniciar Sesión</button>
 							</form> 
 
 		            	</div>											
@@ -68,7 +68,7 @@
 				</div>
 		</div>		
 		<div id="content">
-			<div id="content_index">	
+			<div id="contentM_index">	
 				<div id="description_page">
 					<div id="description">
 						<div id="metro-board">
@@ -98,20 +98,17 @@
   						</div>
 					</div>
 				</div>
-				<div id="ads">
+				<!--<div id="ads">
 					<div id="description_ads">
 						<p>
 							Esta publicidad rifa
 						</p>
 					</div>					
-				</div>
+				</div>!-->
 			</div>	
 			<div id="smelse">
 				<p>
-					Esta empresa no se hace responsable por casos como: <br />
-					robo total de dinero <br /> 
-					clonacion de tarjetas <br />
-					compras fantasma, etc.
+				
 				</p>
 			</div>				
 		</div>
@@ -122,6 +119,10 @@
 				Martin Francisco Martinez Federico	<br />
 				Luis Carlos Monge Castro <br />
 				Jose Muñoz Valdez <br />
+			</p>
+			<p>
+					Esta empresa no se hace responsable por casos como: robo total de dinero, clonacion de tarjetas <br />
+					compras fantasma, etc.
 			</p>
 		</div>
 	</div>

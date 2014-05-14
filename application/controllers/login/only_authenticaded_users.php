@@ -14,9 +14,8 @@ class Only_authenticaded_users extends CI_Controller {
 	
 	public function index() {
 		if($this->session->userdata('logged_in'))
-		{
-			$this->load->helper('form');				
-			$this->load->view('banco/control_panel');
+		{				
+			redirect('banco/banco_controller/controlPanel', 'refresh');
 		}										
 		else
 		{

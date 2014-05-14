@@ -60,9 +60,9 @@
 		</div>
 
 		<div id="content">
-			<div id="content_index">
+			<div id="content_index_2">
 
-				<div id="table_content">
+				<div id="table_content" class="table-responsive">
 					<table class="table table-hover" id="tabla">
 						<th> No.Cuenta </th>				
 						<?php 						
@@ -73,21 +73,14 @@
 							
 						 ?>
 					</table>
-					<div id="table_balance">
-						<div id="table_balance_info">
-							
-						</div>				
+					<div id="table_balance" class="table-responsive">
+								
 					</div>
 				</div>
 				
 			</div>		
 			<div id="smelse">
-				<p>
-					Esta empresa no se hace responsable por casos como: <br />
-					Robo total de dinero <br /> 
-					Clonacion de tarjetas <br />
-					Compras fantasma, etc.
-				</p>
+
 			</div>			
 		</div>
 

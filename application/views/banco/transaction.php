@@ -61,7 +61,7 @@
 		</div>
 
 		<div id="content">
-			<div id="content_index">
+			<div id="content_index_2">
 
 				<form id="form_add" method="post" class="form" role="form" action=<?php echo site_url('banco/banco_controller/doTransaction'); ?>>
 					<div id="form_content">		
@@ -95,8 +95,17 @@
 										<div class="content_right">											
 											<label for="cuenta_destino" class="col-sm-offset-0 col-sm-3 control-label">Cuenta Destino</label>
 											<div class="col-sm-8">
+												<span class="error">
+												<?php
+													if (isset($error))
+													{
+														echo $error;
+													}
+
+												?>
+												</span>
 												<input type="text" class="form-control" id="cuenta_destino" name="cuenta_destino" >
-												</div>
+											</div>
 										</div>	
 
 									</div>
@@ -110,6 +119,15 @@
 										<div class="content_right">											
 											<label for="cantidad" class="col-sm-offset-0 col-sm-3 control-label">Cantidad de la transferencia</label>
 											<div class="col-sm-8">
+												<span class="error">
+												<?php
+													if (isset($error2))
+													{
+														echo $error2;
+													}
+
+												?>
+												</span>
 												<input type="text" class="form-control" id="cantidad" name="cantidad">
 											</div>
 										</div>	
@@ -130,9 +148,9 @@
 			<div id="smelse">
 				<p>
 					Esta empresa no se hace responsable por casos como: <br />
-					robo total de dinero <br /> 
-					clonacion de tarjetas <br />
-					compras fantasma, etc.
+					Robo total de dinero <br /> 
+					Clonacion de tarjetas <br />
+					Compras fantasma, etc.
 				</p>
 			</div>			
 		</div>
